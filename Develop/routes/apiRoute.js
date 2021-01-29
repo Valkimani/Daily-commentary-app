@@ -19,7 +19,26 @@ module.exports = function (app) {
         // Send read data to response of 'GET' request
         response.json(data);
     });
+    // API POST Request
+    app.post("/api/notes", (request, response) => {
+        //Get new note from request body.  
+        const newNote = request.body;
+        
+        console.log("\n\nPOST request - New Note : " + JSON.stringify(newNote));
+        // Assign id 
+
+        let data = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
     
+        // new note pushed in notes file 'db.json'
+        data.push(newNote);
+    
+        fs.writeFileSync('./db/db.json', JSON.stringify(data));
+        
+        console.log("\nSuccessfully added new note to 'db.json' file!");
+       
+        response.json(data);
+    });
+
 
 
 
