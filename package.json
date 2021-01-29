@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Valkimani/Daily-commentary-app#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "uuidv4": "^6.2.6"
   }
 }
