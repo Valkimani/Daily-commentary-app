@@ -34,7 +34,7 @@ module.exports = function (app) {
     
         fs.writeFileSync('./db/db.json', JSON.stringify(data));
         
-        console.log("\nSuccessfully added new note to 'db.json' file!");
+        console.log("\nNew note added to 'db.json' file!");
        
         response.json(data);
     });
@@ -45,14 +45,14 @@ app.delete("/api/notes/:id", (request, response) => {
     let noteId = request.params.id.toString();
     
     console.log(`\n\nDELETE note request for noteId: ${noteId}`);
-    // Read data from 'db.json' file
+    // Read data 
     let data = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
-    // filter data to get notes except the one to delete
+    // filter data to get notes 
     const newData = data.filter( note => note.id.toString() !== noteId );
-    // Write new data to 'db.json' file
+    // Write new data 
     fs.writeFileSync('./db/db.json', JSON.stringify(newData));
     
-    console.log(`\nSuccessfully deleted note with id : ${noteId}`);
+    console.log(`\nNote with id deleted successfully : ${noteId}`);
     // Send response
     response.json(newData);
 });
