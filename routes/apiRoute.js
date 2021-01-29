@@ -39,19 +39,21 @@ module.exports = function (app) {
         response.json(data);
     });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-}
+// API DELETE request
+app.delete("/api/notes/:id", (request, response) => {
+    // Fetched id to delete
+    let noteId = request.params.id.toString();
+    
+    console.log(`\n\nDELETE note request for noteId: ${noteId}`);
+    // Read data from 'db.json' file
+    let data = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
+    // filter data to get notes except the one to delete
+    const newData = data.filter( note => note.id.toString() !== noteId );
+    // Write new data to 'db.json' file
+    fs.writeFileSync('./db/db.json', JSON.stringify(newData));
+    
+    console.log(`\nSuccessfully deleted note with id : ${noteId}`);
+    // Send response
+    response.json(newData);
+});
+};
