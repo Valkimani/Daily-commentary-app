@@ -12,6 +12,7 @@ app.use(express.urlencoded({
 }));
 
 app.use(express.json());
+app.use(logger("dev"));
 app.use(express.static("public"));
 
 // Routes
