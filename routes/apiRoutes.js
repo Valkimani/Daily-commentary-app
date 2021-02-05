@@ -25,7 +25,9 @@ module.exports = function (app) {
         const newNote = request.body;
         
         console.log("\n\nPOST request - New Note : " + JSON.stringify(newNote));
-        // Assign id 
+        // Assign id from uuid package (when a new note is made add an id to newNote before it is pushed into data).
+    
+        newNote.id = uuidv4();
 
         let data = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
     
@@ -51,6 +53,7 @@ app.delete("/api/notes/:id", (request, response) => {
     const newData = data.filter( note => note.id.toString() !== noteId );
     // Write new data 
     fs.writeFileSync('./db/db.json', JSON.stringify(newData));
+
     
     console.log(`\nNote with id deleted successfully : ${noteId}`);
     // Send response
