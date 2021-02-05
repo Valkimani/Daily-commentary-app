@@ -1,8 +1,6 @@
 
 //linking our routes to a series of "data" sources.
-const fs =require ("fs")
-
-
+const fs =require ("fs");
 // npm package for unique id
 const { v4: uuidv4 } = require('uuid');
 // ROUTING

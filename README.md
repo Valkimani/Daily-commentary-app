@@ -38,7 +38,7 @@ A `db.json` file on the backend that will be used to store and retrieve notes us
 
 ## links
 
-[Heroku Guide]()
+[Heroku Guide](https://afternoon-tundra-65624.herokuapp.com/)
 [Github](https://github.com/Valkimani/Daily-commentary-app)
 
 ## License
