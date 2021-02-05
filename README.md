@@ -33,7 +33,8 @@ A `db.json` file on the backend that will be used to store and retrieve notes us
 
 
 ## Screenshot
-
+![NoteTaker](./public/images/NoteTaker.png)
+![AddNote](./public/images/AddNote.png)
 
 ## links
 
