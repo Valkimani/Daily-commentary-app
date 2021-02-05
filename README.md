@@ -39,7 +39,7 @@ A `db.json` file on the backend that will be used to store and retrieve notes us
 ## links
 
 [Heroku Guide]()
-[Github]()
+[Github](https://github.com/Valkimani/Daily-commentary-app)
 
 ## License
 
